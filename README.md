@@ -46,3 +46,20 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 <p>É o repositotio de imagens onde se armazena e distribuir as imagens que vão criar e executar os meus containers.</p>
 </li>
 </ul>
+
+# COMANDOS
+
+<ul>
+<li>[x] docker : verificando se está instalado</li>
+<li>[x] docker container run <nome-da-imagem>: crinado um container</li>
+<li>[x] docker container run --name <nome-do-container> <nome-da-imagem>: crinado um container</li>
+<li>[x] docker container ls: listando os containers que estão em execução</li>
+<li>[x] docker container ls -a: listando todos containers</li>
+<li>[x] docker container rm <id-container>: apagar containers</li>
+<li>[x] docker container run -it <nome-da-imagem> /bin/bash : crinado um container no modo interativo</li>
+<li>[x] docker container run -d nginx : executando em modo dimo, liberando o terminal</li>
+<li>[x] docker container exec -it /bin/bahs : executando o contianer</li>
+<li>[x] docker container ls -a -q : devolve os ids dos containers</li>
+<li>[x] docker container run -d -p 5432:5432 -e POSTGRES_DB=aula-iniciativa -e POSTGRES_USER=iniciativadevops -e POSTGRES_PASSWORD=123456  postgres : iniciando um container e definindo as variveis de hambiente</li>
+
+</ul>

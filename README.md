@@ -63,3 +63,53 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 <li>[x] docker container run -d -p 5432:5432 -e POSTGRES_DB=aula-iniciativa -e POSTGRES_USER=iniciativadevops -e POSTGRES_PASSWORD=123456  postgres : iniciando um container e definindo as variveis de hambiente</li>
 
 </ul>
+
+# CRIANDO O DOCKERFILE
+
+        FROM ubuntu //imagem base
+        RUN apt update // atualiza a imagem 
+        RUN apt install curl --yes // inatala o pacote curl
+<ul>
+<li>[x] docker build -t <nome-da-sua-imagem> <contexto> (. ou -f caminho-do-seu-arquivo)</li>
+<li>[x] docker build -t <nome-da-sua-imagem> <contexto> --no-cahed</li>
+<li>[x] docker image prune : excluir as imagens que não estão sendo usadas</li>
+<li>[x] docker tag ubuntu-curl jeovanedos2santos/ubuntu-curl:v1 -> renomeando uma imagem</li>
+<li>[x] docker login -> login no docker</li>
+<li>[x] docker push <nome-do-repositorio> -> mandando para o docker a sua imagem</li>
+
+</ul>
+
+# OUTROS COMANDOS
+
+<img src="./img/03.png"/>
+
+# CAMADAS
+
+<img src="./img/04.png"/>
+<img src="./img/05.png"/>
+<img src="./img/06.png"/>
+
+# NOMEANDO SUA IMAGEM 
+
+        Namespace/Repositório:Tag
+        jeovanedos2santos/ubuntu-curl:v1
+
+Quando não coloca a tag isso significa que está subindo a versão mais atual
+
+# PRIMEIRO PROJETO: CONVERSÃO DE TEMPERATURA
+
+<p>Dentro do diretorio src crie um arquivo "Dockerfile" e dentro dele coloque os seguintes comandos para definir a sua imagem.</p>
+
+        FROM node:16.15.0           -> imagem base será o node
+        WORKDIR /app                -> criar um diretorio app
+        COPY ./package*.json ./     -> copia o package.json e o  package-lock.json
+        RUN npm install             -> baixa as dependencia do projeto 
+        COPY . .                    -> copia o restande dos arquivos
+        EXPOSE 8080                 -> definindo a porta que o projeto ira roda
+        CMD ["node", "server.js"]   -> definifo os comandos para o projeto roda
+
+<p>Apos execute as seguintes linhas de comandos(execute dentro do diretorio src)</p>
+
+        docker build -t <namespace>/<name-repositorio>:versão
+        docker container run -d -p porta-d-sua-maquina:porta-do-container <namespace>/<name-repositorio>:versão
+

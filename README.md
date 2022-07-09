@@ -86,8 +86,8 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 # CAMADAS
 
 <img src="./img/04.png"/>
-<img src="./img/05.png"/>
-<img src="./img/06.png"/>
+<img src="./img/5.png"/>
+<img src="./img/6.png"/>
 
 # NOMEANDO SUA IMAGEM 
 

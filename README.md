@@ -1,10 +1,10 @@
 # Devops
 
-<img src="https://img.mandic.com.br/blog/2018/02/devops-process.png"/>
+<img width="700px" src="https://img.mandic.com.br/blog/2018/02/devops-process.png"/>
 
 # O que é o DOCKER?
 
-<img src="https://programmer.group/images/article/41101b13d9a5c14312941dc56b5f483b.jpg"/>
+<img width="700px" src="https://programmer.group/images/article/41101b13d9a5c14312941dc56b5f483b.jpg"/>
 
 "Docker é um conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração."
 
@@ -21,7 +21,7 @@ O grande problema para esse metodo é que, para cada maquina virtual é preciso 
 
 # CONTENIZAÇÃO
 
-<img src="./img/01.png"/>
+<img width="700px" src="./img/01.png"/>
 
 Nesse método, temos a camada de infrastrutura, o sistema operacional e encima dele temos o container Runtime(O CRI vem de Container Runtime Interface, que é um plugin que expõe uma interface que permite que um Kubelet (agent que roda dentro de cada nó dentro de um cluster do Kubernetes) use diferentes tipos de runtime compatíveis com a especificação da OCI sem precisar de recompilação ou reinicialização.) e com ele temos a execução dos containes que executam os processos.
 
@@ -31,7 +31,7 @@ São os templeates que são gerados para criar e executar um container.
 
 # ARQUITETURA DO DOCKER?
 
-<img src="./img/02.png"/>
+<img width="700px" src="./img/02.png"/>
 
 Ele é formado por três componentes. Docker daemon, docker client e docker registry.
 
@@ -81,13 +81,13 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 
 # OUTROS COMANDOS
 
-<img src="./img/03.png"/>
+<img width="700px" src="./img/03.png"/>
 
 # CAMADAS
 
-<img src="./img/04.png"/>
-<img src="./img/5.png"/>
-<img src="./img/6.png"/>
+<img width="700px" src="./img/04.png"/>
+<img width="700px" src="./img/5.png"/>
+<img width="700px" src="./img/6.png"/>
 
 # NOMEANDO SUA IMAGEM 
 

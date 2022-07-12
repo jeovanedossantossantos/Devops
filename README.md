@@ -113,4 +113,5 @@ Quando não coloca a tag isso significa que está subindo a versão mais atual
         docker build -t <namespace>/<name-repositorio>:versão
         docker container run -d -p porta-d-sua-maquina:porta-do-container <namespace>/<name-repositorio>:versão
 
-<a href="https://docs.docker.com/get-started/overview/">Mais informações</a>
+<a href="https://docs.docker.com/get-started/overview/">Documentação do docker</a>
+<a href="https://fernandofreitasalves.com/criando-um-container-docker-para-um-projeto-django-existente/">Mais detalhes</a>

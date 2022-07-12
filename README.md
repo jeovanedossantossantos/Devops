@@ -233,3 +233,63 @@ Para solucionar esse problema existe o KUBERNETS.
 
 <p>Kubernetes é um sistema de orquestração de contêineres open-source que automatiza a implantação, o dimensionamento e a gestão de aplicações em contêineres. Ele foi originalmente projetado pelo Google e agora é mantido pela Cloud Native Computing Foundation.</p>
 <p>É uma plataforma open source que automatiza as operações dos containers Linux. O Kubernetes elimina grande parte dos processos manuais necessários para implantar e escalar as aplicações em containers.</p>
+
+<img width="500px" src="./img/07.png"/>
+
+# Kubernetes Control Plane
+
+<img width="500px" src="./img/08.png"/>
+
+No kubernetes control plane temos as componentes que fazem o gerenciamento do CUST KUBERNETES.
+
+<ul>
+<li>
+<h2>Kube Api Server</h2>
+É responsavel por receber toda a comunicação com o CUST.
+</li>
+<li>
+<h2>ETCD</h2>
+É um banco de chave e valor que armazena todos os dados do KUBERNETE.
+Nuca é acessado os dados pelo ETCD isso é feito pelo KUBE API SERVER.
+</li>
+<li>
+<h2>Kube Scheduler</h2>
+É o componente que determina onde cada container será executado no CUST.
+Ele analisa as expecificaçõs e verifica quaid NODE pode atender a certa demanda e define onde ele será executado.
+</li>
+<li>
+<h2>Kube Controller Manager</h2>
+Ele executa e gerencia todos os controladores do kubernetes
+</li>
+</ul>
+
+# O que é um controlado?
+
+Se algo estiver fora do programado o controlador ira atuar para que a apalicação volte ao estado normal.
+
+- ReplicaSet: garante que o número de replica está em conformidade com o que foi determinado
+- NodeController: monitora o estado dos CUST e caso algo aconteça ele atua
+
+# Kubenetes Nodes
+
+<ul>
+<li>
+<h2>Kube Proxy</h2>
+É responsavel pelas conexões de redes por todo o CUST.
+</li>
+<li>
+<h2>Kubelet</h2>
+Atua como um gestor do node, ele é responsavel pela execusção dos containers e interagir com o kuber api server para reportar os status.
+O Kubelet usa um contianer runtime compativel com o kubernetes para execuar os containeres.
+</li>
+</ul>
+
+O kubernetes possui algumas interfaces para uso de softwares de terceiros para algumas tarefas, ganhando flexibilidade e sapara o que é respnsabilidade do kubernetes e o que não é.<br/>
+
+Para gerenciamento de historico no kubernetes temos o Container Storage Interface (CSI) de rede temos Container NetWork Interface (CNI) e para execução de containes temos o Container Runtime Interface (CRI).<br/>
+
+# Como usar o docker e o kubernetes juntos?
+
+Graças ao Open Container Initiative (OCI),um projeto da Linux Foundation, iniciado em junho de 2015 pela Docker, para projetar padrões abertos para virtualização em nível de sistema operacional, principalmente contêineres Linux, é uma estrutura de governança open source com o objetivo de padronizar o formato de criação de imagem e execução de container o docker, container deen e o craior tem o mesmo padrão para executar container e criar imagens.<br/>
+Logo eles são compativeis entre se.
+

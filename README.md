@@ -4,7 +4,7 @@
 
 # O que é o DOCKER?
 
-<img width="700px" src="https://programmer.group/images/article/41101b13d9a5c14312941dc56b5f483b.jpg"/>
+<img width="500px" height="400px" src="https://programmer.group/images/article/41101b13d9a5c14312941dc56b5f483b.jpg"/>
 
 "Docker é um conjunto de produtos de plataforma como serviço que usam virtualização de nível de sistema operacional para entregar software em pacotes chamados contêineres. Os contêineres são isolados uns dos outros e agrupam seus próprios softwares, bibliotecas e arquivos de configuração."
 
@@ -14,14 +14,14 @@
 <a href="https://www.docker.com/">Mais informações</a>
 
 # VIRTUALIZAÇÃO
-<img src="./img/00.png"/>
+<img width="500px" height="400px" src="./img/00.png"/>
 Na virtualização eu tenho como base a minha infraestrutura. Logo assim tenho a virtualização, por cima dela eu tenho a minha infravirtual onde eu escolho quanto de recurso eu vou destinar para cada maquina. Seguindo, temos o sistema operacionar e aplicação.
 
 O grande problema para esse metodo é que, para cada maquina virtual é preciso instalar e gerenciar o sistema operacionar e seus recusros.
 
 # CONTENIZAÇÃO
 
-<img width="700px" src="./img/01.png"/>
+<img width="500px" height="400px" src="./img/01.png"/>
 
 Nesse método, temos a camada de infrastrutura, o sistema operacional e encima dele temos o container Runtime(O CRI vem de Container Runtime Interface, que é um plugin que expõe uma interface que permite que um Kubelet (agent que roda dentro de cada nó dentro de um cluster do Kubernetes) use diferentes tipos de runtime compatíveis com a especificação da OCI sem precisar de recompilação ou reinicialização.) e com ele temos a execução dos containes que executam os processos.
 
@@ -31,7 +31,7 @@ São os templeates que são gerados para criar e executar um container.
 
 # ARQUITETURA DO DOCKER?
 
-<img width="700px" src="./img/02.png"/>
+<img width="600px" height="400px" src="./img/02.png"/>
 
 Ele é formado por três componentes. Docker daemon, docker client e docker registry.
 
@@ -85,9 +85,11 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 
 # CAMADAS
 
-<img width="700px" src="./img/04.png"/>
-<img width="700px" src="./img/5.png"/>
-<img width="700px" src="./img/6.png"/>
+<div display="flex">
+<img width="400px" height="400px" src="./img/04.png"/>
+<img width="400px" height="400px" src="./img/5.png"/>
+<img width="400px" height="400px" src="./img/6.png"/>
+</div>
 
 # NOMEANDO SUA IMAGEM 
 

@@ -192,6 +192,10 @@ Command é o comando padrão que o docker vai rodar logo depois que você subir,
 </li>
 
 </ul>
+ 
+# CRIANDO UM CONTAINER COMO O DOCKER COMPOSE
+        
+        docker compose up --build -> crinado uma novo container com as imagens
 
 # PRIMEIRO PROJETO: CONVERSÃO DE TEMPERATURA
 
@@ -212,3 +216,13 @@ Command é o comando padrão que o docker vai rodar logo depois que você subir,
 
 <a href="https://docs.docker.com/get-started/overview/">Documentação do docker</a><br/>
 <a href="https://fernandofreitasalves.com/criando-um-container-docker-para-um-projeto-django-existente/">Mais detalhes</a>
+       
+ # NEM TUDO SÃO FLORES
+        
+<p>Para cada solução existe um novo problema. Com o atual cenario de clud e micro-serviçõs é necessario mais do que apenas isolamento de processos para a execução das aplicações.</p>
+<p>É preciso carantir que se um container estiver com uma mal funcionameto, é importande que ele seja encerrado e ser criado outro em seu lugar.</p>
+<p>E isso o docker não faz. </p>
+<p>É preciso também ser capaz de replicar os containers para distribuir as cargas de requisições entre eles.</p>
+<p>E isso o docker não faz. </p>
+
+Para solucionar esse problema existe o KUBERNET.

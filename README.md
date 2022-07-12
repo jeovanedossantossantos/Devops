@@ -271,7 +271,7 @@ Se algo estiver fora do programado o controlador ira atuar para que a apalicaç�
 - NodeController: monitora o estado dos CUST e caso algo aconteça ele atua
 
 # Kubenetes Nodes
-
+<img width="500px" src="./img/09.png"/>
 <ul>
 <li>
 <h2>Kube Proxy</h2>

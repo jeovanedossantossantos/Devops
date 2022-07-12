@@ -240,12 +240,12 @@ Para solucionar esse problema existe o KUBERNETS.
 
 <img width="500px" src="./img/08.png"/>
 
-No kubernetes control plane temos as componentes que fazem o gerenciamento do CUST KUBERNETES.
+No kubernetes control plane temos as componentes que fazem o gerenciamento do CLUSTER KUBERNETES.
 
 <ul>
 <li>
 <h2>Kube Api Server</h2>
-É responsavel por receber toda a comunicação com o CUST.
+É responsavel por receber toda a comunicação com o CLUSTER.
 </li>
 <li>
 <h2>ETCD</h2>
@@ -254,7 +254,7 @@ Nuca é acessado os dados pelo ETCD isso é feito pelo KUBE API SERVER.
 </li>
 <li>
 <h2>Kube Scheduler</h2>
-É o componente que determina onde cada container será executado no CUST.
+É o componente que determina onde cada container será executado no CLUSTER.
 Ele analisa as expecificaçõs e verifica quaid NODE pode atender a certa demanda e define onde ele será executado.
 </li>
 <li>
@@ -268,14 +268,14 @@ Ele executa e gerencia todos os controladores do kubernetes
 Se algo estiver fora do programado o controlador ira atuar para que a apalicação volte ao estado normal.
 
 - ReplicaSet: garante que o número de replica está em conformidade com o que foi determinado
-- NodeController: monitora o estado dos CUST e caso algo aconteça ele atua
+- NodeController: monitora o estado dos CLUSTER e caso algo aconteça ele atua
 
 # Kubenetes Nodes
 <img width="500px" src="./img/09.png"/>
 <ul>
 <li>
 <h2>Kube Proxy</h2>
-É responsavel pelas conexões de redes por todo o CUST.
+É responsavel pelas conexões de redes por todo o CLUSTER.
 </li>
 <li>
 <h2>Kubelet</h2>
@@ -292,4 +292,20 @@ Para gerenciamento de historico no kubernetes temos o Container Storage Interfac
 
 Graças ao Open Container Initiative (OCI),um projeto da Linux Foundation, iniciado em junho de 2015 pela Docker, para projetar padrões abertos para virtualização em nível de sistema operacional, principalmente contêineres Linux, é uma estrutura de governança open source com o objetivo de padronizar o formato de criação de imagem e execução de container o docker, container deen e o craior tem o mesmo padrão para executar container e criar imagens.<br/>
 Logo eles são compativeis entre se.
+
+# Para saber se já está instadalado execute no seu terminal
+
+        choco install kubernetes-cli
+        kubectl -> no seu terminal
+
+Vamos usar o k3d que é usado para habiente de desenvolvimento e para estudos. Para hambiente de produção o mais indicado é o rke.
+
+        choco install k3d
+
+# CRINADO UM CLUSTER
+
+        k3d cluster create -> cria um cluster
+        k3d cluster ls -> listar todos os cluster
+        k3d cluster delete -> apaga
+        kubectl get nodes -> listas os nodes do kubernetes
 

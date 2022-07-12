@@ -96,6 +96,101 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 
 Quando não coloca a tag isso significa que está subindo a versão mais atual
 
+# ARQUIVO DOCKER
+<ul>
+<li>
+<h2>Docker Images</h2>    
+
+        FROM name_imagen:version
+ 
+Aqui estamos usando uma imagem do docker hub. Isto, é um container pré-formatado do docker que permite que você monte sua máquina a partir daquela configuração inicial.
+</li>
+<li>
+<h2>Environment Variables (Variáveis de ambiente)</h2>  
+        
+        ENV environment_variables
+ 
+Você pode criar todas as variáveis de ambiente que quiser com o ENV.
+</li>
+<li>
+<h2>Run Commands</h2>    
+
+        RUN comando_a_ser_execultado
+
+No RUN você deve passar quais comandos o docker devera executar para que as configurações inicias de um projeto funcione.
+Exemplo: npm i, npm install, yarn, npm run start etc. Também pode ser passando comandos de migrate. 
+</li>
+<li>
+<h2>Workdir</h2>    
+
+        WORKDIR caminho_do_diretorio_onde_vai_roda_os_comandos
+        
+Workdir é uma instrução para mostrar ao docker em qual diretório ele vai rodar os comandos a partir dali.
+</li>
+<li>
+<h2>COPY e ADD</h2>    
+
+Copy e ADD são basicamente a mesma cosia. Ambos copiam um arquivo do seu computador (o Host) dentro do container (o Guest). No meu exemplo, estou apenas copiando o requirements para dentro do docker, para que eu possa dar pip install nos pacotes.
+</li>
+<li>
+<h2>EXPOSE</h2>  
+
+        EXPOSE 8000
+        
+Expose é para mapear uma porta do Guest (o Container) para o Host (seu computador)
+</li>
+</ul>
+
+#ARQUIVO DOCKER-COMPONSE
+O compose é uma ferramenta para rodar múltiplos containers do docker. Só precisa criar um arquivo yml na pasta do seu projeto com o nome docker-compose.yml
+
+        version: '3.3'
+
+        services:
+          # Postgres
+          db:
+            image: postgres
+            environment:
+              - POSTGRES_USER=postgres
+              - POSTGRES_PASSWORD=postgres
+              - POSTGRES_DB=postgres
+
+          web:
+            build: .
+            command: ["./run_web.sh"]
+            volumes:
+              - .:/webapps
+            ports:
+              - "8000:8000"
+            links:
+              - db
+            depends_on:
+              - db
+<ul>
+<li>
+<h2>LINKS</h2> 
+
+        links:
+          - db
+          
+Você pode se referir a outro container que pertence ao seu arquivo docker-compose utilizando o nome dele. Como criamos um container com o nome db para o Postgres nós podemos criar um link para ele no nosso container chamado web. Pode ver que no settings.py nós colocamos ‘db‘ como host.
+</li>
+<li>
+<h2>DEPENDS_ON</h2>   
+
+        depends_on:
+          - db
+
+Dependência expressa entre serviços.
+</li>
+<li>
+<h2>Command</h2>    
+Command é o comando padrão que o docker vai rodar logo depois que você subir, ou seja, colocar os containeres para funcionar.
+
+</li>
+
+</ul>
+
 # PRIMEIRO PROJETO: CONVERSÃO DE TEMPERATURA
 
 <p>Dentro do diretorio src crie um arquivo "Dockerfile" e dentro dele coloque os seguintes comandos para definir a sua imagem.</p>
@@ -113,5 +208,5 @@ Quando não coloca a tag isso significa que está subindo a versão mais atual
         docker build -t <namespace>/<name-repositorio>:versão
         docker container run -d -p porta-d-sua-maquina:porta-do-container <namespace>/<name-repositorio>:versão
 
-<a href="https://docs.docker.com/get-started/overview/">Documentação do docker</a>
+<a href="https://docs.docker.com/get-started/overview/">Documentação do docker</a><br/>
 <a href="https://fernandofreitasalves.com/criando-um-container-docker-para-um-projeto-django-existente/">Mais detalhes</a>

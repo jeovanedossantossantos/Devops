@@ -302,10 +302,83 @@ Vamos usar o k3d que é usado para habiente de desenvolvimento e para estudos. P
 
         choco install k3d
 
-# CRINADO UM CLUSTER
+# COMANDOS
 
-        k3d cluster create -> cria um cluster
+        k3d cluster create <nome> -> cria um cluster
         k3d cluster ls -> listar todos os cluster
         k3d cluster delete -> apaga
         kubectl get nodes -> listas os nodes do kubernetes
+        k3d cluster create --no-lb -> criar um cluster sem loadbalencer
+        k3d cluster create <nome> --servers <quantidade> --agents <quantidade>
 
+# DEPLOY
+
+<ul>
+<li>
+<h2>POD</h2>
+É o menor objeto do cluster kubernetes é nele que se executa os contaniners.
+Dentro do POD pode ter mais de um containe, e qunado existe varuis containers dentro dele os containers dividem o mesmo endereço de rede (o mesmo ip) e o mesmo filesysten.
+O jeito correto é colocar cada aplicação detro de POD. Como mostra a imgagem abaixo.
+
+<img width="500px" src="./img/10.png">
+
+Uma outra solução é criar um container auxiliar cumprindo um requisito não funcional da aplicação. Essa pratica é chamada de SydeCar é muito usado em soluções de Service Mesh.
+<p> -Service Mesh: pode ser definido como uma infra-estrutura dedicada para lidar com um alto volume de tráfego baseado em IPC (inter-processos de comunicação). Em uma arquitetura Microsserviços , é normalmente chamada de tráfego Leste-Oeste.‍
+
+Em poucas palavras, service mesh pode ser considerado uma "camada" de rede abstrata para comunicações de serviços.
+
+Estas abstrações resolvem a maior parte das manipulações da rede como Balanceamento de Carga, Disjuntores, Retries, Timeout, Routing inteligente que pode permitir técnicas avançadas de implantação como Canary Releases, Dark Launches, e outros.
+
+Então, podemos tirar essas responsabilidades de nosso código de aplicação. Além disso, podemos remover estas funções dos desenvolvedores, e isso é muito importante porque os desenvolvedores devem codificar para o negócio, não para os requisitos de infra-estrutura.
+
+Outra característica importante do Service Mesh é a Telemetria, algumas implementações se integram facilmente com Jaeger e Prometheus.
+
+Bibliotecas famosas no ecossistema Java relacionadas com a manipulação de redes como Netflix Ribbon, Hystrix e Eureka podem ser substituídas para as implementações de Service Mesh como ISTIO. <a href="https://br.sensedia.com/post/what-is-service-mesh-and-why-you-should-consider-it">Mais detalhes</a></p>
+<img width="500px" src="./img/11.png">
+
+# Criando um POD
+Para criar ele é preciso ter um arquivo de manifesto, nesse aquivo tem toda as expecificações quer sera criada no cluster.
+<ul>
+<li>
+<h2>apiVersion</h2>
+É o grupo de apis que o tipo de objeto criado irá utilizar.(Indica a versão da API Kubernetes usada para criar o objeto)
+</li>
+<li>
+<h2>kind</h2>
+Define o tipo de objeto a ser criado : Pod, Deployment, ReplicaSet, Service, Namespace 
+</li>
+<li>
+<h2>metadata</h2>
+Define os dados do objeto como: name, labels, etc. É um dicionário. Tudo dentro do metadata tem que ser indentado a direita, eles são filhos do objeto metadata, e não importa a quantidade de espaços que você use para indentar; o ponto de atenção é que eles tem que ter sempre o mesmo espaçamento para indicar que são campos do mesmo nível.
+</li>
+<li>
+<h2>spec</h2>
+ Define as especificações do objeto que desejamos criar e varia conforme o objeto. Também é um dicionário, então precisamos adicionar as propriedades que vão resolver o que você precisa fazer.
+</li>
+
+        apiVersion: v1
+        kind: Pod
+        metadata: 
+                name: pod-nginx
+        spec:
+                containers:
+                  - image: cont-nginx
+                  name: nginx
+                  ports: 
+                - containerPort: 80 
+
+<p>Para saber a versão da api faça</p>
+
+        kubectl api-resources
+        kubectl api-resources | grep pod
+        kubectl apply -f pod.yaml -> aplicando o manifesto
+        kubectl get pods -o wide -> mostra mais detalhes
+        kubectl describe pod meupod -> mostra toda a descição
+        kubectl port-forward pod/<namepod> port:portDoPod -> cria um redirecionamento para o pod
+        kubectl delete pod <name-pod>
+
+<a href="https://macoratti.net/22/04/kubern_ambpd1.htm">Mais detalhes</a>
+</ul>
+</li>
+
+</ul>

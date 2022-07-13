@@ -377,6 +377,7 @@ Define os dados do objeto como: name, labels, etc. É um dicionário. Tudo dentr
         kubectl port-forward pod/<namepod> port:portDoPod -> cria um redirecionamento para o pod
         kubectl delete pod <name-pod>
         kubectl delete -f pod.yaml -> deleta todos os pods que estiverem nesse maifesto
+        watch 'kubectl get pods' -> ficara mostrando em tempo real a criação dos pods
 
 <a href="https://macoratti.net/22/04/kubern_ambpd1.htm">Mais detalhes</a>
 </ul>
@@ -386,7 +387,7 @@ Define os dados do objeto como: name, labels, etc. É um dicionário. Tudo dentr
 
 # Labels e Selectore
 
-Conceito: no kubernetes sempre está interagindo com objetos, o ReplicaSet interage com Pod, o deployed vai interagir com outros objetos.
+Conceito: no kubernetes sempre está interagindo com objetos, o ReplicaSet interage com Pod, o  Deployment vai interagir com outros objetos.
 
 # Como é feita essa interação?
 
@@ -409,5 +410,14 @@ Se alguma coisa acontecer com algum pod, o ReplicaSet replica outro pod para gar
 
 <img width="500px" src="./img/13.png">
 
+# Deployment
 
+Ele é responsavel pelo versionamento do replicaset.<br/>
 
+<img width="500px" src="./img/14.png"/>
+
+Caso tenha alguma alteração de imagem ou outra epecificação do pod ele criara outro replicaset.
+
+<img width="500px" src="./img/15.png"/>
+
+E esse outro replicaset ira ficar no cluster "desabilitado", pois o novo replicaset ira pegar todos os pods antigos e recriara para a versão mais atual.

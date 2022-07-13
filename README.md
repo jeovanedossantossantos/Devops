@@ -376,6 +376,7 @@ Define os dados do objeto como: name, labels, etc. É um dicionário. Tudo dentr
         kubectl describe pod meupod -> mostra toda a descição
         kubectl port-forward pod/<namepod> port:portDoPod -> cria um redirecionamento para o pod
         kubectl delete pod <name-pod>
+        kubectl delete -f pod.yaml -> deleta todos os pods que estiverem nesse maifesto
 
 <a href="https://macoratti.net/22/04/kubern_ambpd1.htm">Mais detalhes</a>
 </ul>
@@ -390,3 +391,23 @@ Conceito: no kubernetes sempre está interagindo com objetos, o ReplicaSet inter
 # Como é feita essa interação?
 
 Os objetos geramente são marcados com labels, labels são elementos de chave e valor e o selectore será usado para selecionar objetos baseados nessa label.
+
+# Comando
+
+        kubectl get pods -l app=green -> selecionar pod
+
+# ReplicaSet
+
+O pod não tem escabilidade e reciliencia, para isso é preciso um controlador.
+Nisso entra o ReplicaSet.<br/>
+
+Como funciona o ReplicaSet?<br/>
+É definido o template do pod e também a qua ntidade de replicas.<br/>
+<img width="500px" src="./img/12.png"/><br/>
+
+Se alguma coisa acontecer com algum pod, o ReplicaSet replica outro pod para garantir que existira a quantidade que definida inicialmente.
+
+<img width="500px" src="./img/13.png">
+
+
+

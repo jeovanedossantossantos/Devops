@@ -298,7 +298,7 @@ Logo eles são compativeis entre se.
         choco install kubernetes-cli
         kubectl -> no seu terminal
 
-Vamos usar o k3d que é usado para habiente de desenvolvimento e para estudos. Para hambiente de produção o mais indicado é o rke.
+Vamos usar o k3d que é usado para abiente de desenvolvimento e para estudos. Para ambiente de produção o mais indicado é o rke.
 
         choco install k3d
 

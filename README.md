@@ -318,7 +318,7 @@ Vamos usar o k3d que é usado para abiente de desenvolvimento e para estudos. Pa
 <h2>POD</h2>
 É o menor objeto do cluster kubernetes é nele que se executa os contaniners.
 Dentro do POD pode ter mais de um containe, e qunado existe varuis containers dentro dele os containers dividem o mesmo endereço de rede (o mesmo ip) e o mesmo filesysten.
-O jeito correto é colocar cada aplicação detro de POD. Como mostra a imgagem abaixo.
+O jeito correto é colocar cada aplicação detro de POD. Como mostra a imgagem abaixo.<br/>
 
 <img width="500px" src="./img/10.png">
 
@@ -382,3 +382,11 @@ Define os dados do objeto como: name, labels, etc. É um dicionário. Tudo dentr
 </li>
 
 </ul>
+
+# Labels e Selectore
+
+Conceito: no kubernetes sempre está interagindo com objetos, o ReplicaSet interage com Pod, o deployed vai interagir com outros objetos.
+
+# Como é feita essa interação?
+
+Os objetos geramente são marcados com labels, labels são elementos de chave e valor e o selectore será usado para selecionar objetos baseados nessa label.

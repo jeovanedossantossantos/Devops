@@ -8,3 +8,16 @@ spec:
       image: fabricioveronez/web-page:blue
       ports: 
         - containerPort: 80
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: meupo-2
+  labels:
+    app: green
+spec:
+  containers:
+    - name: web
+      image: fabricioveronez/web-page:green
+      ports: 
+        - containerPort: 80

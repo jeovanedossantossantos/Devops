@@ -442,9 +442,75 @@ Isso se da pois o servido do docker  não está em uso logo no vscode faça o se
 <br/>
 Nome da extenção: Kubernetes v1.3.10
 
-Clique com o batão direito do mause sobre <b>docker-desktop</b> e selecione Set as Current Cluster e tente roda os comandos.
+Clique com o batão direito do mause sobre <b>docker-desktop</b> e selecione Set as Current Cluster e tente roda os comandos.<br/>
 <img src="./img/18.png">
 
 Se não resolver, verifique se no docker desktop se o docker e o kubernetes estão rodando, verificando se estão verdes os dois icone.
 
 <img src="./img/19.png">
+
+# Services
+
+Existe varios tipos de services, vamos ver três deles.
+
+<ul>
+<li>
+<h2>ClusterIP</h2>
+<img src="./img/20.png">
+
+É usado internamente no kubernetes, ele recebe um ip proprio dentro do cluster e ele vai ser o ponto de acesso aos pods internamente no cluster kubernetes.
+Com esse service não havera aceeos externo aos pods apenas os pods que tem estão internamentes no cluster kubernetes terão acesso.
+</li>
+<li>
+<h2>NodePort</h2>
+<img src="./img/21.png">
+
+Ele expõe externamente esses pods, porém ele possui uma caracteristica ele usa uma porta de todos os nos do cluster kubernetes ele elege um número de porta, que normalmente por padrão está na ranger da 30000 a 32767.
+
+E ao escolher esse número de porta ele vai expor em todos os nos do cluster kubernetes.
+
+</li>
+<li>
+<h2>LoadBalancer</h2>
+<img src="./img/22.png">
+
+É um service que expoe externamente o meu pod, porém ele utilizar o serviço do cloud provider (Computação em nuvem) onde ele está em execução, normalmente se utiliza o loadbalancer junto com um kubenetes sever as seves conectado a um cloud provider, pois quando é criando esse tipop de service o cloud provider cria um loadbalancer na frente do service gerando um ip externo, sendo através desse ip que será ppossivel acessar os pods.
+</li>
+<ul>
+
+# Criando um Servidor
+
+        k3d cluster create <nome_do_seu_cluster> --servers 3 --agents 3 -p "30000:30000@loadbalancer"
+        kubectl apply -f deployment.yaml
+
+OBS: caso apareça o seguite erro faça o seguinte.<br/>
+
+        Unable to connect to the server: context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+1 - Crie um arquivo chamado:
+
+        .wslconfig
+
+na sua pasta de usuario do windows.<br/>
+
+2- Coloque o seguinte codigo dentro dele
+
+        [ws12]
+        memory=<coloque aqui a quandidade de memoria RAM que você desja gastar nos processos, repeitando os limite de sua maquina>
+        processors=<coloque aqui a quandidade de processadores que deseja destinar para o serviço>
+
+como isso ele vai restarta os serviçõs do docker com essa nova configuração.<br/>
+
+3- Abra seu terminal como adiministrador, digite a seguite linha.
+
+        Restart-Service LxssManager
+
+Apos isso tente criar os services novamente.
+
+# Comandos 
+
+        kubectl get services -> para ver os services criados
+
+
+
+

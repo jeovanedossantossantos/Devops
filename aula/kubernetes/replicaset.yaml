@@ -3,7 +3,7 @@ kind: ReplicaSet
 metadata:
   name: meureplicaset
 spec:
-  replicas: 10
+  replicas: 3
   selector:
     matchLabels: 
       app: web

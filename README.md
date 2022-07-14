@@ -421,3 +421,30 @@ Caso tenha alguma alteração de imagem ou outra epecificação do pod ele criar
 <img width="500px" src="./img/15.png"/>
 
 E esse outro replicaset ira ficar no cluster "desabilitado", pois o novo replicaset ira pegar todos os pods antigos e recriara para a versão mais atual.
+
+# Rollback
+
+Kubernetes possui um mecanismo de reversão integrado. Existem várias estratégias quando se trata de implantar aplicativos em produção. No Kubernetes, as atualizações contínuas são a estratégia padrão para atualizar a versão em execução do seu aplicativo . A atualização contínua encerra o Pod anterior e traz o Pod mais novo de forma incremental.
+
+        kubectl rollout history deployment <nome_do_metadata> -> lista as versões existentes
+        kubectl rollout undo deployment <nome_do_metadata> -> faz o processo de troca para a versão antiga
+
+# OBS: 
+Um problema que aconteceu comigo, ao reiniciar a minha maquina ao executar os comandos do <b>kubectl</b> apresentava o seguintes erro:
+
+<img src="./img/16.jpeg"/>
+
+        Unable to connect to the server: dial tcp xxx.xxx.x.xxx:xxxx: connectex: Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente.
+
+Isso se da pois o servido do docker  não está em uso logo no vscode faça o seguinte:
+
+<img src="./img/17.png">
+<br/>
+Nome da extenção: Kubernetes v1.3.10
+
+Clique com o batão direito do mause sobre <b>docker-desktop</b> e selecione Set as Current Cluster e tente roda os comandos.
+<img src="./img/18.png">
+
+Se não resolver, verifique se no docker desktop se o docker e o kubernetes estão rodando, verificando se estão verdes os dois icone.
+
+<img src="./img/19.png">

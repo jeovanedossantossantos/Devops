@@ -1,0 +1,29 @@
+# Deployment do postgre
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: postgre
+spec:
+  selector:
+    matchLabels:
+      app: postgre
+  template:
+    metadata:
+      labels:
+        app: postgre
+    spec:
+      containers:
+        - name: postgre
+          image: postgre:14.3
+          ports: 
+           - containerPort: 5432
+          env: 
+            - name: POSTGRES_PASSWORD
+              value: $$(POSTGRES_PASSWORD)
+            - name: POSTGRES_USER
+              value: $$(POSTGRES_USER)
+            - name: POSTGRES_DB
+              value: $$(POSTGRES_DB)
+
+--
+

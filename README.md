@@ -229,7 +229,7 @@ Para solucionar esse problema existe o KUBERNETS.
 
 # O que é KUBERNETS?
 
-<img width="500px" height="400px" src="https://kubernetes.io/images/favicon.png"/>
+<img width="400px" height="400px" src="https://kubernetes.io/images/favicon.png"/>
 
 <p>Kubernetes é um sistema de orquestração de contêineres open-source que automatiza a implantação, o dimensionamento e a gestão de aplicações em contêineres. Ele foi originalmente projetado pelo Google e agora é mantido pela Cloud Native Computing Foundation.</p>
 <p>É uma plataforma open source que automatiza as operações dos containers Linux. O Kubernetes elimina grande parte dos processos manuais necessários para implantar e escalar as aplicações em containers.</p>

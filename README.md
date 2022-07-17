@@ -83,7 +83,7 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 
 <img width="700px" src="./img/03.png"/>
 
-# CAMADAS
+# CAMANDOS
 
 <div display="flex">
 <img width="400px" height="400px" src="./img/04.png"/>

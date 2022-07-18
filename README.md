@@ -143,7 +143,7 @@ Expose é para mapear uma porta do Guest (o Container) para o Host (seu computad
 </li>
 </ul>
 
-#ARQUIVO DOCKER-COMPONSE
+# ARQUIVO DOCKER-COMPONSE
 O compose é uma ferramenta para rodar múltiplos containers do docker. Só precisa criar um arquivo yml na pasta do seu projeto com o nome docker-compose.yml
 
         version: '3.3'
@@ -511,6 +511,9 @@ Apos isso tente criar os services novamente.
 
         kubectl get services -> para ver os services criados
 
+# O que é o Terraform?
 
+<img width="300px" height="300px"src="https://blog.4linux.com.br/wp-content/uploads/2020/02/terraform_blog-500x500_c.png">
 
+Terraform é uma ferramenta para criar, alterar e criar versões de infraestrutura com segurança e eficiência. O Terraform pode ajudar com várias nuvens, tendo um único fluxo de trabalho para todas as nuvens. A infraestrutura gerenciada pelo Terraform pode ser hospedada em nuvens públicas, como Amazon Web Services, Microsoft Azure e Google Cloud Platform, ou no local, em nuvens privadas, como VMWare vSphere, OpenStack ou CloudStack. O Terraform trata a infraestrutura como código (infrastructure as code – IaC) para que você nunca precise se preocupar com a sua infraestrutura se distanciando da configuração desejada.
 

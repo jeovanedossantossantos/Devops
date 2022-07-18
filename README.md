@@ -61,6 +61,7 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 <li>[x] docker container exec -it /bin/bahs : executando o contianer</li>
 <li>[x] docker container ls -a -q : devolve os ids dos containers</li>
 <li>[x] docker container run -d -p 5432:5432 -e POSTGRES_DB=aula-iniciativa -e POSTGRES_USER=iniciativadevops -e POSTGRES_PASSWORD=123456  postgres : iniciando um container e definindo as variveis de hambiente</li>
+<li>[x] docker images -a |  grep "<none>" | awk '{print $3}' | xargs docker rmi : apagando todos as imagens que tem a tag <none></li>
 
 </ul>
 

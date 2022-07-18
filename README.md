@@ -64,6 +64,7 @@ Ele é formado por três componentes. Docker daemon, docker client e docker regi
 <li>[x] docker images -a |  grep "<none>" | awk '{print $3}' | xargs docker rmi : apagando todos as imagens que tem a tag <none></li>
 
 </ul>
+<a href="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes-pt">Mais informações</a>
 
 # CRIANDO O DOCKERFILE
 

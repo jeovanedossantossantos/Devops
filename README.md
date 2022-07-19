@@ -517,3 +517,56 @@ Apos isso tente criar os services novamente.
 
 Terraform é uma ferramenta para criar, alterar e criar versões de infraestrutura com segurança e eficiência. O Terraform pode ajudar com várias nuvens, tendo um único fluxo de trabalho para todas as nuvens. A infraestrutura gerenciada pelo Terraform pode ser hospedada em nuvens públicas, como Amazon Web Services, Microsoft Azure e Google Cloud Platform, ou no local, em nuvens privadas, como VMWare vSphere, OpenStack ou CloudStack. O Terraform trata a infraestrutura como código (infrastructure as code – IaC) para que você nunca precise se preocupar com a sua infraestrutura se distanciando da configuração desejada.
 
+# Cloud provider (Computação nas nuvens)
+
+A primeira forma para criar um cluoud provaider é utilizar o terminal web. Nessa forma é usado interface ou dashed border e isso não é pratico para um ambiente de desenvovimento.
+
+<img width="300px" height="300px" src="./img/23.png"/>
+
+Outra alternativa é usar ferramentas CLI (command line interface ou interface de linha de comando). Com isso pode criar scripts fazendo isso é mais automotizado. Porém tem uma maneira mais segura de se fazer isso.
+
+<img width="300px" height="300px" src="./img/24.png"/>
+
+Que é usando lingugem de programação, python, go etc. E para fazer isso existe os SDK (Software development kit OU Kit de desenvolvimento de software).
+Dessa forma é um pouco mais eficiente.
+
+<img width="300px" height="300px" src="./img/25.png"/>
+
+Mas nesse momento entra a infraestrutura como codigo utilizando a linguagem propria da ferramenta e a mesma vai criar a infrastrutura.
+E é ai que entra o terraform, ele uma ferramenta declarativa.
+
+<img width="300px" height="300px" src="./img/26.png"/>
+
+E ele é multi platarforma.
+
+<img width="300px" height="300px" src="./img/27.png"/>
+
+Como ele funciona, ele possui os "Provaiders" que são bibliotecas e pluguins que se conectam com os cloud provider, cada pluiguin faz a ponte entre sua platarforma e o terraform.
+
+<img width="300px" height="300px" src="./img/28.png"/>
+
+Para encontra esse provaiders ou pluiguins existe o <a href="https://registry.terraform.io/browse/providers">terraform | registry</a> que é um tipo de repositorio de provaiders.
+
+<img width="300px" height="300px" src="./img/29.png"/>
+
+# O que é melhor TERRAFORM ou ANSIBLE
+
+<img width="300px" height="300px" src="./img/30.png"/>
+
+São coisas diferentes e um complementa o outro.
+
+<img width="300px" height="300px" src="./img/31.png"/>
+
+
+# InfraEstrutura de código do TERRAFORM
+
+<img width="300px" height="300px" src="./img/32.png"/>
+
+O terraform usa o HashiCorp Configuration Language é uma linguagem de configuração exclusiva . Ele foi projetado para ser usado com ferramentas HashiCorp, notadamente o Terraform, mas o HCL se expandiu como uma linguagem de configuração mais geral. É visualmente semelhante ao JSON com estruturas de dados e recursos adicionais integrados.
+
+<h2>Exmplos de código do terraform</h2>
+
+<img width="300px" height="300px" src="./img/33.png"/>
+
+Esse bloco é o de RESOURCES com ele você criar um elemento que sera criando na infraestrutura (vem, cluster kubernetes e etc).
+

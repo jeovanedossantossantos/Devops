@@ -566,9 +566,25 @@ São coisas diferentes e um complementa o outro.
 
 O terraform usa o HashiCorp Configuration Language é uma linguagem de configuração exclusiva . Ele foi projetado para ser usado com ferramentas HashiCorp, notadamente o Terraform, mas o HCL se expandiu como uma linguagem de configuração mais geral. É visualmente semelhante ao JSON com estruturas de dados e recursos adicionais integrados.
 
-<h2>Exmplos de código do terraform</h2>
+<h2>Exmplos de códigos do terraform</h2>
 
 <img width="300px" height="300px" src="./img/33.png"/>
 
 Esse bloco é o de RESOURCES com ele você criar um elemento que sera criando na infraestrutura (vem, cluster kubernetes e etc).
 
+        resource <tipo_do_recurso> <nome_do_recurso>{
+                image = <imaga da maquina>
+                name = <nome da maquina>
+                region = <região>
+                size = <tamanho>
+        }
+
+
+
+Já o Data Sources é um recurso que existe no cloud provider que foi criando manualmete sem o terraform, mas você pode querer interaginr com ele.
+
+<img width="300px" height="300px" src="./img/34.png"/>
+
+Agora vejamos os Provaiders: é um plugin de conexão entre o cloud provider e o terraform ele precisar ser delcarado no projeto.
+
+<img width="300px" height="300px" src="./img/35.png"/>

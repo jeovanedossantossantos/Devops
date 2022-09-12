@@ -197,7 +197,7 @@ Command é o comando padrão que o docker vai rodar logo depois que você subir,
  
 # CRIANDO UM CONTAINER COMO O DOCKER COMPOSE
         
-        docker compose up --build -> crinado uma novo container com as imagens
+        docker-compose up --build -> crinado uma novo container com as imagens
 
 # PRIMEIRO PROJETO: CONVERSÃO DE TEMPERATURA
 

@@ -12,6 +12,7 @@
 <p>O Docker elimina tarefas de configuração repetitivas e mundanas e é usado em todo o ciclo de vida de desenvolvimento para desenvolvimento de aplicativos rápido, fácil e portátil – desktop e nuvem. A plataforma abrangente de ponta a ponta do Docker inclui UIs, CLIs, APIs e segurança que são projetados para trabalhar juntos em todo o ciclo de vida de entrega do aplicativo.</p>
 
 <a href="https://www.docker.com/">Mais informações</a>
+<a href="https://docker-unleashed.readthedocs.io/aula2.html">Complemento</a>
 
 # VIRTUALIZAÇÃO
 <img width="500px" height="400px" src="./img/00.png"/>
